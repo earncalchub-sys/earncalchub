@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free finance calculators: mortgage, compound interest, retirement, debt payoff & more. Start saving & earning money today.">
+  <title>EarnCalcHub - Free Finance Calculators</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .tool-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .tool-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+    .result { animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl">💰</div>
+        <h1 class="text-3xl font-bold text-gray-900">EarnCalcHub</h1>
+      </div>
+      <div class="flex gap-6 text-lg font-medium overflow-x-auto">
+        <a href="#" onclick="showTool('home')" class="hover:text-emerald-600 whitespace-nowrap">Home</a>
+        <a href="#" onclick="showTool('mortgage')" class="hover:text-emerald-600 whitespace-nowrap">Mortgage</a>
+        <a href="#" onclick="showTool('compound')" class="hover:text-emerald-600 whitespace-nowrap">Compound Interest</a>
+        <a href="#" onclick="showTool('retirement')" class="hover:text-emerald-600 whitespace-nowrap">Retirement</a>
+        <a href="#" onclick="showTool('debt')" class="hover:text-emerald-600 whitespace-nowrap">Debt Payoff</a>
+        <a href="#" onclick="showTool('ccpayoff')" class="hover:text-emerald-600 whitespace-nowrap">Credit Card</a>
+        <a href="#" onclick="showTool('savings')" class="hover:text-emerald-600 whitespace-nowrap">Savings Goal</a>
+        <a href="#" onclick="showTool('takehome')" class="hover:text-emerald-600 whitespace-nowrap">Take-Home Pay</a>
+        <a href="#" onclick="showTool('percentage')" class="hover:text-emerald-600 whitespace-nowrap">Percentage</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <!-- HOME -->
+    <div id="home" class="tool-section">
+      <div class="text-center mb-12">
+        <h2 class="text-5xl font-bold text-gray-900 mb-4">Free Finance Calculators</h2>
+        <p class="text-xl text-gray-600 max-w-xl mx-auto">Calculate mortgages, investments, debt payoff & more. 100% free • No sign-up • Instant results</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div onclick="showTool('mortgage')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Mortgage Calculator</h3>
+          <p class="text-gray-500 text-sm mt-2">Monthly payment & total cost</p>
+        </div>
+        <div onclick="showTool('compound')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Compound Interest</h3>
+          <p class="text-gray-500 text-sm mt-2">Watch your money grow</p>
+        </div>
+        <div onclick="showTool('retirement')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Retirement Savings</h3>
+          <p class="text-gray-500 text-sm mt-2">Plan your future</p>
+        </div>
+        <div onclick="showTool('debt')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Debt Payoff</h3>
+          <p class="text-gray-500 text-sm mt-2">Get out of debt faster</p>
+        </div>
+        <div onclick="showTool('ccpayoff')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Credit Card Payoff</h3>
+          <p class="text-gray-500 text-sm mt-2">Pay off credit cards</p>
+        </div>
+        <div onclick="showTool('savings')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Savings Goal</h3>
+          <p class="text-gray-500 text-sm mt-2">How much to save monthly</p>
+        </div>
+        <div onclick="showTool('takehome')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Take-Home Pay</h3>
+          <p class="text-gray-500 text-sm mt-2">See what you actually keep</p>
+        </div>
+        <div onclick="showTool('percentage')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
+          <h3 class="font-semibold text-xl">Percentage & Profit</h3>
+          <p class="text-gray-500 text-sm mt-2">Quick math for deals</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MORTGAGE TOOL -->
+    <div id="mortgage" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Mortgage Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">Loan Amount ($)</label><input id="loanAmt" type="number" value="300000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Interest Rate (%)</label><input id="loanRate" type="number" value="6.5" step="0.01" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Loan Term (years)</label><input id="loanYears" type="number" value="30" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <button onclick="calcMortgage()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Monthly Payment</button>
+          <div id="mort-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+        <a href="https://www.lendingtree.com" target="_blank" class="mt-8 block text-center text-emerald-600 font-medium text-lg">Compare real mortgage rates → (replace later with your affiliate link)</a>
+      </div>
+    </div>
+
+    <!-- COMPOUND INTEREST TOOL -->
+    <div id="compound" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Compound Interest Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">Initial Investment ($)</label><input id="principal" type="number" value="5000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Annual Interest Rate (%)</label><input id="rate" type="number" value="7" step="0.01" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Years</label><input id="years" type="number" value="20" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <button onclick="calcCompound()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Future Value</button>
+          <div id="comp-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETIREMENT TOOL -->
+    <div id="retirement" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Retirement Savings Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">Current Savings ($)</label><input id="currentSav" type="number" value="10000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Monthly Contribution ($)</label><input id="monthlyCont" type="number" value="500" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Years until Retirement</label><input id="retYears" type="number" value="25" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Expected Annual Return (%)</label><input id="retRate" type="number" value="8" step="0.01" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <button onclick="calcRetirement()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Retirement Total</button>
+          <div id="ret-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEBT PAYOFF TOOL -->
+    <div id="debt" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Debt Payoff Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">Total Debt ($)</label><input id="debtAmt" type="number" value="15000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Annual Interest Rate (%)</label><input id="debtRate" type="number" value="18" step="0.01" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Monthly Payment ($)</label><input id="debtPay" type="number" value="400" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <button onclick="calcDebt()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Months to Pay Off</button>
+          <div id="debt-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREDIT CARD PAYOFF TOOL -->
+    <div id="ccpayoff" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Credit Card Payoff Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">Balance ($)</label><input id="ccBal" type="number" value="5000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">APR (%)</label><input id="ccApr" type="number" value="24" step="0.01" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Monthly Payment ($)</label><input id="ccPay" type="number" value="200" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <button onclick="calcCCPayoff()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Payoff Time</button>
+          <div id="cc-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAVINGS GOAL TOOL -->
+    <div id="savings" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Savings Goal Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">Goal Amount ($)</label><input id="goalAmt" type="number" value="20000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Current Savings ($)</label><input id="currSav" type="number" value="2000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <div><label class="block text-sm mb-1">Months to Reach Goal</label><input id="goalMonths" type="number" value="24" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <button onclick="calcSavingsGoal()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Monthly Savings Needed</button>
+          <div id="sav-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAKE-HOME PAY TOOL -->
+    <div id="takehome" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Take-Home Pay Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">Annual Salary ($)</label><input id="salary" type="number" value="65000" class="w-full p-4 border rounded-2xl text-lg"></div>
+          <button onclick="calcTakeHome()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Monthly Take-Home</button>
+          <div id="takehome-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERCENTAGE TOOL -->
+    <div id="percentage" class="tool-section hidden">
+      <h2 class="text-3xl font-bold mb-6">Percentage & Profit Calculator</h2>
+      <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
+        <div class="space-y-6">
+          <div><label class="block text-sm mb-1">What is X% of Y?</label>
+            <div class="flex gap-2"><input id="percX" type="number" value="15" class="flex-1 p-4 border rounded-2xl text-lg"><span class="text-2xl self-center">%</span><input id="percY" type="number" value="200" class="flex-1 p-4 border rounded-2xl text-lg"></div>
+          </div>
+          <button onclick="calcPercentage()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate</button>
+          <div id="perc-result" class="result text-center text-2xl font-semibold mt-6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white border-t py-8 text-center text-gray-500 text-sm">
+    © EarnCalcHub • All tools run 100% in your browser • Zero data collected • Built for passive income
+  </footer>
+
+  <script>
+    function showTool(tool) {
+      document.querySelectorAll('.tool-section').forEach(s => s.classList.add('hidden'));
+      const section = document.getElementById(tool);
+      if (section) section.classList.remove('hidden');
+    }
+
+    function calcMortgage() {
+      const P = parseFloat(document.getElementById('loanAmt').value);
+      const annualRate = parseFloat(document.getElementById('loanRate').value) / 100;
+      const years = parseFloat(document.getElementById('loanYears').value);
+      const r = annualRate / 12;
+      const n = years * 12;
+      const M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      document.getElementById('mort-result').innerHTML = `Monthly Payment: <span class="text-emerald-600">$${M.toFixed(2)}</span><br>Total Paid: <span class="text-emerald-600">$${(M * n).toFixed(0)}</span>`;
+    }
+
+    function calcCompound() {
+      const P = parseFloat(document.getElementById('principal').value);
+      const rate = parseFloat(document.getElementById('rate').value) / 100;
+      const years = parseFloat(document.getElementById('years').value);
+      const A = P * Math.pow(1 + rate, years);
+      document.getElementById('comp-result').innerHTML = `Future Value: <span class="text-emerald-600">$${A.toFixed(2)}</span>`;
+    }
+
+    function calcRetirement() {
+      const current = parseFloat(document.getElementById('currentSav').value);
+      const monthly = parseFloat(document.getElementById('monthlyCont').value);
+      const years = parseFloat(document.getElementById('retYears').value);
+      const rate = parseFloat(document.getElementById('retRate').value) / 100 / 12;
+      let total = current;
+      for (let i = 0; i < years * 12; i++) {
+        total = (total + monthly) * (1 + rate);
+      }
+      document.getElementById('ret-result').innerHTML = `At retirement: <span class="text-emerald-600">$${total.toFixed(0)}</span>`;
+    }
+
+    function calcDebt() {
+      const debt = parseFloat(document.getElementById('debtAmt').value);
+      const rate = parseFloat(document.getElementById('debtRate').value) / 100 / 12;
+      const payment = parseFloat(document.getElementById('debtPay').value);
+      let balance = debt;
+      let months = 0;
+      while (balance > 0 && months < 1200) {
+        balance = balance * (1 + rate) - payment;
+        months++;
+      }
+      document.getElementById('debt-result').innerHTML = `Months to pay off: <span class="text-emerald-600">${months}</span>`;
+    }
+
+    function calcCCPayoff() {
+      const bal = parseFloat(document.getElementById('ccBal').value);
+      const apr = parseFloat(document.getElementById('ccApr').value) / 100 / 12;
+      const pay = parseFloat(document.getElementById('ccPay').value);
+      let balance = bal;
+      let months = 0;
+      while (balance > 0 && months < 1200) {
+        balance = balance * (1 + apr) - pay;
+        months++;
+      }
+      document.getElementById('cc-result').innerHTML = `Months to pay off: <span class="text-emerald-600">${months}</span>`;
+    }
+
+    function calcSavingsGoal() {
+      const goal = parseFloat(document.getElementById('goalAmt').value);
+      const current = parseFloat(document.getElementById('currSav').value);
+      const months = parseFloat(document.getElementById('goalMonths').value);
+      const needed = (goal - current) / months;
+      document.getElementById('sav-result').innerHTML = `Monthly savings needed: <span class="text-emerald-600">$${needed.toFixed(2)}</span>`;
+    }
+
+    function calcTakeHome() {
+      const salary = parseFloat(document.getElementById('salary').value);
+      const monthly = salary / 12 * 0.78; // simple 22% effective tax estimate (US average)
+      document.getElementById('takehome-result').innerHTML = `Monthly take-home pay: <span class="text-emerald-600">$${monthly.toFixed(2)}</span>`;
+    }
+
+    function calcPercentage() {
+      const x = parseFloat(document.getElementById('percX').value);
+      const y = parseFloat(document.getElementById('percY').value);
+      const result = (x / 100) * y;
+      document.getElementById('perc-result').innerHTML = `<span class="text-emerald-600">$${result.toFixed(2)}</span>`;
+    }
+
+    // Tailwind init
+    tailwind.config = { content: ["./**/*.html"] };
+  </script>
+</body>
+</html>
