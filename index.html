@@ -13,6 +13,7 @@
     .tool-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
     .result { animation: fadeIn 0.5s; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .nav-link { transition: all 0.2s; }
   </style>
 </head>
 <body class="bg-gray-50">
@@ -23,26 +24,27 @@
         <div class="w-10 h-10 bg-emerald-600 rounded-2xl flex items-center justify-center text-white text-3xl">💰</div>
         <h1 class="text-3xl font-bold text-gray-900">EarnCalcHub</h1>
       </div>
-      <div class="flex gap-6 text-lg font-medium overflow-x-auto">
-        <a href="#" onclick="showTool('home')" class="hover:text-emerald-600 whitespace-nowrap">Home</a>
-        <a href="#" onclick="showTool('mortgage')" class="hover:text-emerald-600 whitespace-nowrap">Mortgage</a>
-        <a href="#" onclick="showTool('compound')" class="hover:text-emerald-600 whitespace-nowrap">Compound Interest</a>
-        <a href="#" onclick="showTool('retirement')" class="hover:text-emerald-600 whitespace-nowrap">Retirement</a>
-        <a href="#" onclick="showTool('debt')" class="hover:text-emerald-600 whitespace-nowrap">Debt Payoff</a>
-        <a href="#" onclick="showTool('ccpayoff')" class="hover:text-emerald-600 whitespace-nowrap">Credit Card</a>
-        <a href="#" onclick="showTool('savings')" class="hover:text-emerald-600 whitespace-nowrap">Savings Goal</a>
-        <a href="#" onclick="showTool('takehome')" class="hover:text-emerald-600 whitespace-nowrap">Take-Home Pay</a>
-        <a href="#" onclick="showTool('percentage')" class="hover:text-emerald-600 whitespace-nowrap">Percentage</a>
+      <div class="flex gap-6 text-lg font-medium overflow-x-auto pb-1">
+        <a href="#" onclick="showTool('home')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Home</a>
+        <a href="#" onclick="showTool('mortgage')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Mortgage</a>
+        <a href="#" onclick="showTool('compound')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Compound</a>
+        <a href="#" onclick="showTool('retirement')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Retirement</a>
+        <a href="#" onclick="showTool('debt')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Debt Payoff</a>
+        <a href="#" onclick="showTool('ccpayoff')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Credit Card</a>
+        <a href="#" onclick="showTool('savings')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Savings Goal</a>
+        <a href="#" onclick="showTool('takehome')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Take-Home Pay</a>
+        <a href="#" onclick="showTool('percentage')" class="nav-link hover:text-emerald-600 whitespace-nowrap">Percentage</a>
       </div>
     </div>
   </nav>
 
   <div class="max-w-6xl mx-auto px-6 py-10">
+    
     <!-- HOME -->
     <div id="home" class="tool-section">
       <div class="text-center mb-12">
         <h2 class="text-5xl font-bold text-gray-900 mb-4">Free Finance Calculators</h2>
-        <p class="text-xl text-gray-600 max-w-xl mx-auto">Calculate mortgages, investments, debt payoff & more. 100% free • No sign-up • Instant results</p>
+        <p class="text-xl text-gray-600 max-w-xl mx-auto">Instant mortgage, investment, debt & retirement calculators.<br>100% free • No sign-up • Built for passive income</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div onclick="showTool('mortgage')" class="tool-card bg-white p-6 rounded-3xl shadow-sm cursor-pointer border border-emerald-100 hover:border-emerald-300">
@@ -80,7 +82,7 @@
       </div>
     </div>
 
-    <!-- MORTGAGE TOOL -->
+    <!-- MORTGAGE -->
     <div id="mortgage" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Mortgage Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
@@ -91,11 +93,11 @@
           <button onclick="calcMortgage()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate Monthly Payment</button>
           <div id="mort-result" class="result text-center text-2xl font-semibold mt-6"></div>
         </div>
-        <a href="https://www.lendingtree.com" target="_blank" class="mt-8 block text-center text-emerald-600 font-medium text-lg">Compare real mortgage rates → (replace later with your affiliate link)</a>
+        <a href="https://www.lendingtree.com" target="_blank" class="mt-8 block text-center text-emerald-600 font-medium text-lg">Compare real mortgage rates → (replace with your affiliate link later)</a>
       </div>
     </div>
 
-    <!-- COMPOUND INTEREST TOOL -->
+    <!-- COMPOUND INTEREST -->
     <div id="compound" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Compound Interest Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
@@ -109,7 +111,7 @@
       </div>
     </div>
 
-    <!-- RETIREMENT TOOL -->
+    <!-- RETIREMENT -->
     <div id="retirement" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Retirement Savings Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
@@ -124,7 +126,7 @@
       </div>
     </div>
 
-    <!-- DEBT PAYOFF TOOL -->
+    <!-- DEBT PAYOFF -->
     <div id="debt" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Debt Payoff Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
@@ -138,7 +140,7 @@
       </div>
     </div>
 
-    <!-- CREDIT CARD PAYOFF TOOL -->
+    <!-- CREDIT CARD PAYOFF -->
     <div id="ccpayoff" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Credit Card Payoff Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
@@ -152,7 +154,7 @@
       </div>
     </div>
 
-    <!-- SAVINGS GOAL TOOL -->
+    <!-- SAVINGS GOAL -->
     <div id="savings" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Savings Goal Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
@@ -166,7 +168,7 @@
       </div>
     </div>
 
-    <!-- TAKE-HOME PAY TOOL -->
+    <!-- TAKE-HOME PAY -->
     <div id="takehome" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Take-Home Pay Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
@@ -178,13 +180,18 @@
       </div>
     </div>
 
-    <!-- PERCENTAGE TOOL -->
+    <!-- PERCENTAGE -->
     <div id="percentage" class="tool-section hidden">
       <h2 class="text-3xl font-bold mb-6">Percentage & Profit Calculator</h2>
       <div class="bg-white p-8 rounded-3xl shadow-sm max-w-lg mx-auto">
         <div class="space-y-6">
-          <div><label class="block text-sm mb-1">What is X% of Y?</label>
-            <div class="flex gap-2"><input id="percX" type="number" value="15" class="flex-1 p-4 border rounded-2xl text-lg"><span class="text-2xl self-center">%</span><input id="percY" type="number" value="200" class="flex-1 p-4 border rounded-2xl text-lg"></div>
+          <div>
+            <label class="block text-sm mb-1">What is X% of Y?</label>
+            <div class="flex gap-2 items-center">
+              <input id="percX" type="number" value="15" class="flex-1 p-4 border rounded-2xl text-lg">
+              <span class="text-3xl text-gray-400">%</span>
+              <input id="percY" type="number" value="200" class="flex-1 p-4 border rounded-2xl text-lg">
+            </div>
           </div>
           <button onclick="calcPercentage()" class="w-full bg-emerald-600 text-white py-5 rounded-3xl text-xl font-medium">Calculate</button>
           <div id="perc-result" class="result text-center text-2xl font-semibold mt-6"></div>
@@ -205,29 +212,33 @@
     }
 
     function calcMortgage() {
-      const P = parseFloat(document.getElementById('loanAmt').value);
-      const annualRate = parseFloat(document.getElementById('loanRate').value) / 100;
-      const years = parseFloat(document.getElementById('loanYears').value);
+      const P = parseFloat(document.getElementById('loanAmt').value) || 0;
+      const annualRate = parseFloat(document.getElementById('loanRate').value) / 100 || 0;
+      const years = parseFloat(document.getElementById('loanYears').value) || 0;
       const r = annualRate / 12;
       const n = years * 12;
-      const M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-      document.getElementById('mort-result').innerHTML = `Monthly Payment: <span class="text-emerald-600">$${M.toFixed(2)}</span><br>Total Paid: <span class="text-emerald-600">$${(M * n).toFixed(0)}</span>`;
+      let M = 0;
+      if (r > 0 && n > 0) M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      const totalPaid = M * n;
+      document.getElementById('mort-result').innerHTML = `
+        Monthly Payment: <span class="text-emerald-600">$${M.toFixed(2)}</span><br>
+        Total Paid: <span class="text-emerald-600">$${(totalPaid).toFixed(0)}</span>
+      `;
     }
 
     function calcCompound() {
-      const P = parseFloat(document.getElementById('principal').value);
-      const rate = parseFloat(document.getElementById('rate').value) / 100;
-      const years = parseFloat(document.getElementById('years').value);
+      const P = parseFloat(document.getElementById('principal').value) || 0;
+      const rate = parseFloat(document.getElementById('rate').value) / 100 || 0;
+      const years = parseFloat(document.getElementById('years').value) || 0;
       const A = P * Math.pow(1 + rate, years);
       document.getElementById('comp-result').innerHTML = `Future Value: <span class="text-emerald-600">$${A.toFixed(2)}</span>`;
     }
 
     function calcRetirement() {
-      const current = parseFloat(document.getElementById('currentSav').value);
-      const monthly = parseFloat(document.getElementById('monthlyCont').value);
-      const years = parseFloat(document.getElementById('retYears').value);
-      const rate = parseFloat(document.getElementById('retRate').value) / 100 / 12;
-      let total = current;
+      let total = parseFloat(document.getElementById('currentSav').value) || 0;
+      const monthly = parseFloat(document.getElementById('monthlyCont').value) || 0;
+      const years = parseFloat(document.getElementById('retYears').value) || 0;
+      const rate = (parseFloat(document.getElementById('retRate').value) || 0) / 100 / 12;
       for (let i = 0; i < years * 12; i++) {
         total = (total + monthly) * (1 + rate);
       }
@@ -235,10 +246,9 @@
     }
 
     function calcDebt() {
-      const debt = parseFloat(document.getElementById('debtAmt').value);
-      const rate = parseFloat(document.getElementById('debtRate').value) / 100 / 12;
-      const payment = parseFloat(document.getElementById('debtPay').value);
-      let balance = debt;
+      let balance = parseFloat(document.getElementById('debtAmt').value) || 0;
+      const rate = (parseFloat(document.getElementById('debtRate').value) || 0) / 100 / 12;
+      const payment = parseFloat(document.getElementById('debtPay').value) || 0;
       let months = 0;
       while (balance > 0 && months < 1200) {
         balance = balance * (1 + rate) - payment;
@@ -248,10 +258,9 @@
     }
 
     function calcCCPayoff() {
-      const bal = parseFloat(document.getElementById('ccBal').value);
-      const apr = parseFloat(document.getElementById('ccApr').value) / 100 / 12;
-      const pay = parseFloat(document.getElementById('ccPay').value);
-      let balance = bal;
+      let balance = parseFloat(document.getElementById('ccBal').value) || 0;
+      const apr = (parseFloat(document.getElementById('ccApr').value) || 0) / 100 / 12;
+      const pay = parseFloat(document.getElementById('ccPay').value) || 0;
       let months = 0;
       while (balance > 0 && months < 1200) {
         balance = balance * (1 + apr) - pay;
@@ -261,27 +270,27 @@
     }
 
     function calcSavingsGoal() {
-      const goal = parseFloat(document.getElementById('goalAmt').value);
-      const current = parseFloat(document.getElementById('currSav').value);
-      const months = parseFloat(document.getElementById('goalMonths').value);
-      const needed = (goal - current) / months;
+      const goal = parseFloat(document.getElementById('goalAmt').value) || 0;
+      const current = parseFloat(document.getElementById('currSav').value) || 0;
+      const months = parseFloat(document.getElementById('goalMonths').value) || 0;
+      const needed = months > 0 ? (goal - current) / months : 0;
       document.getElementById('sav-result').innerHTML = `Monthly savings needed: <span class="text-emerald-600">$${needed.toFixed(2)}</span>`;
     }
 
     function calcTakeHome() {
-      const salary = parseFloat(document.getElementById('salary').value);
-      const monthly = salary / 12 * 0.78; // simple 22% effective tax estimate (US average)
+      const salary = parseFloat(document.getElementById('salary').value) || 0;
+      const monthly = salary / 12 * 0.78; // simple US average after-tax estimate
       document.getElementById('takehome-result').innerHTML = `Monthly take-home pay: <span class="text-emerald-600">$${monthly.toFixed(2)}</span>`;
     }
 
     function calcPercentage() {
-      const x = parseFloat(document.getElementById('percX').value);
-      const y = parseFloat(document.getElementById('percY').value);
+      const x = parseFloat(document.getElementById('percX').value) || 0;
+      const y = parseFloat(document.getElementById('percY').value) || 0;
       const result = (x / 100) * y;
       document.getElementById('perc-result').innerHTML = `<span class="text-emerald-600">$${result.toFixed(2)}</span>`;
     }
 
-    // Tailwind init
+    // Initialize Tailwind
     tailwind.config = { content: ["./**/*.html"] };
   </script>
 </body>
